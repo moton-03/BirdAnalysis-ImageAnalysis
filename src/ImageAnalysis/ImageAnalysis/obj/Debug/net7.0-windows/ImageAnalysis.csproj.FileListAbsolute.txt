@@ -1,0 +1,17 @@
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\bin\Debug\net7.0-windows\ImageAnalysis.exe
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\bin\Debug\net7.0-windows\ImageAnalysis.deps.json
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\bin\Debug\net7.0-windows\ImageAnalysis.runtimeconfig.json
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\bin\Debug\net7.0-windows\ImageAnalysis.dll
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\bin\Debug\net7.0-windows\ImageAnalysis.pdb
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\ImageAnalysis.csproj.AssemblyReference.cache
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\ImageAnalysis.Form1.resources
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\ImageAnalysis.csproj.GenerateResource.cache
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\ImageAnalysis.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\ImageAnalysis.AssemblyInfoInputs.cache
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\ImageAnalysis.AssemblyInfo.cs
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\ImageAnalysis.csproj.CoreCompileInputs.cache
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\ImageAnalysis.dll
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\refint\ImageAnalysis.dll
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\ImageAnalysis.pdb
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\ImageAnalysis.genruntimeconfig.cache
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\ref\ImageAnalysis.dll
