@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33513.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageAnalysis", "ImageAnalysis\ImageAnalysis.csproj", "{6CC7A09C-9761-45D3-A7F6-5FE3DACB328B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageAnalysis", "ImageAnalysis\ImageAnalysis.csproj", "{BC1FA30E-DC17-4B78-A611-E285992FD6D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6CC7A09C-9761-45D3-A7F6-5FE3DACB328B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6CC7A09C-9761-45D3-A7F6-5FE3DACB328B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6CC7A09C-9761-45D3-A7F6-5FE3DACB328B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6CC7A09C-9761-45D3-A7F6-5FE3DACB328B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC1FA30E-DC17-4B78-A611-E285992FD6D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC1FA30E-DC17-4B78-A611-E285992FD6D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC1FA30E-DC17-4B78-A611-E285992FD6D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC1FA30E-DC17-4B78-A611-E285992FD6D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {40EF400F-588F-4C48-9638-BF773B037CFF}
+		SolutionGuid = {8287B5FC-B8D7-402D-9AE6-B6F0A0B71EBF}
 	EndGlobalSection
 EndGlobal
