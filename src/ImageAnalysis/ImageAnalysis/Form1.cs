@@ -7,7 +7,7 @@ namespace ImageAnalysis
 {
     public partial class Form1 : Form
     {
-        Bitmap bmp;
+        Bitmap bmp = null;
         string path = "";
 
         public Form1()
@@ -68,39 +68,46 @@ namespace ImageAnalysis
 
         private void cropToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string inputTopRightX = Microsoft.VisualBasic.Interaction.InputBox("TopRightX:", "Crop");
-            int valueTopRightX;
-            if ((int.TryParse(inputTopRightX, out valueTopRightX)))
+            if (!(bmp == null))
             {
-                string inputTopRightY = Microsoft.VisualBasic.Interaction.InputBox("TopRightY:", "Crop");
-                int valueTopRightY;
-                if ((int.TryParse(inputTopRightY, out valueTopRightY)))
+                string inputTopRightX = Microsoft.VisualBasic.Interaction.InputBox("TopRightX:", "Crop");
+                int valueTopRightX;
+                if ((int.TryParse(inputTopRightX, out valueTopRightX)))
                 {
-                    string inputBottomLeftX = Microsoft.VisualBasic.Interaction.InputBox("BottomLeftX:", "Crop");
-                    int valueBottomLeftX;
-                    if ((int.TryParse(inputBottomLeftX, out valueBottomLeftX)))
+                    string inputTopRightY = Microsoft.VisualBasic.Interaction.InputBox("TopRightY:", "Crop");
+                    int valueTopRightY;
+                    if ((int.TryParse(inputTopRightY, out valueTopRightY)))
                     {
-                        string inputBottomLeftY = Microsoft.VisualBasic.Interaction.InputBox("BottomLeftY:", "Crop");
-                        int valueBottomLeftY;
-                        if ((int.TryParse(inputBottomLeftY, out valueBottomLeftY)))
+                        string inputBottomLeftX = Microsoft.VisualBasic.Interaction.InputBox("BottomLeftX:", "Crop");
+                        int valueBottomLeftX;
+                        if ((int.TryParse(inputBottomLeftX, out valueBottomLeftX)))
                         {
-                            toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 7);
-                            Rectangle rect = new Rectangle(valueTopRightX, valueTopRightY, valueBottomLeftX, valueBottomLeftY);
+                            string inputBottomLeftY = Microsoft.VisualBasic.Interaction.InputBox("BottomLeftY:", "Crop");
+                            int valueBottomLeftY;
+                            if ((int.TryParse(inputBottomLeftY, out valueBottomLeftY)))
+                            {
+                                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 7);
+                                Rectangle rect = new Rectangle(valueTopRightX, valueTopRightY, valueBottomLeftX, valueBottomLeftY);
 
-                            toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 7);
-                            Bitmap bmp2 = new Bitmap(rect.Width, rect.Height);
-                            toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 7);
-                            Graphics g = Graphics.FromImage(bmp2);
-                            toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 7);
-                            g.DrawImage(bmp, new Rectangle(0, 0, bmp2.Width, bmp2.Height), rect, GraphicsUnit.Pixel);
+                                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 7);
+                                Bitmap bmp2 = new Bitmap(rect.Width, rect.Height);
+                                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 7);
+                                Graphics g = Graphics.FromImage(bmp2);
+                                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 7);
+                                g.DrawImage(bmp, new Rectangle(0, 0, bmp2.Width, bmp2.Height), rect, GraphicsUnit.Pixel);
 
-                            toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 7);
-                            bmp = bmp2;
+                                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 7);
+                                bmp = bmp2;
 
-                            toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 7);
-                            MainPictureBoxUpdate();
-                            toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 7);
-                            toolStripProgressBar.Value = 0;
+                                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 7);
+                                MainPictureBoxUpdate();
+                                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 7);
+                                toolStripProgressBar.Value = 0;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Do not enter text.", "Crop", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
@@ -117,54 +124,141 @@ namespace ImageAnalysis
                     MessageBox.Show("Do not enter text.", "Crop", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("Do not enter text.", "Crop", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void revertToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 3);
-            bmp = new Bitmap(path);
-            toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 3);
-            MainPictureBoxUpdate();
-            toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 3);
-            toolStripProgressBar.Value = 0;
+            if (!(bmp == null))
+            {
+                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 3);
+                bmp = new Bitmap(path);
+                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 3);
+                MainPictureBoxUpdate();
+                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 3);
+                toolStripProgressBar.Value = 0;
+            }
         }
 
         private void resizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string inputMagnification = Microsoft.VisualBasic.Interaction.InputBox("Magnification:", "Crop");
-            int valueMagnification;
-            if ((int.TryParse(inputMagnification, out valueMagnification)))
+            if (!(bmp == null))
             {
-                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
-                int width = bmp.Width * valueMagnification;
-                int height = bmp.Height * valueMagnification;
+                string inputSideSize = Microsoft.VisualBasic.Interaction.InputBox("SideSize:", "Resize");
+                int valueSideSize;
+                if ((int.TryParse(inputSideSize, out valueSideSize)))
+                {
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    int width = valueSideSize;
+                    int height = valueSideSize;
 
-                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
-                Bitmap bmp2 = new Bitmap(width, height);
-                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
-                Graphics g = Graphics.FromImage(bmp2);
-                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
-                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
-                g.DrawImage(bmp, 0, 0, width, height);
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    Bitmap bmp2 = new Bitmap(width, height);
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    Graphics g = Graphics.FromImage(bmp2);
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    g.DrawImage(bmp, 0, 0, width, height);
 
-                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
-                bmp = bmp2;
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    bmp = bmp2;
 
-                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    MainPictureBoxUpdate();
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    toolStripProgressBar.Value = 0;
+                }
+                else
+                {
+                    MessageBox.Show("Do not enter text.", "Resize", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void rotateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!(bmp == null))
+            {
+                string inputAngle = Microsoft.VisualBasic.Interaction.InputBox("Angle:", "Rotate");
+                int valueAngle;
+                if ((int.TryParse(inputAngle, out valueAngle)))
+                {
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    int angle = valueAngle;
+
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    var matrix = new Matrix();
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    matrix.RotateAt(angle, new PointF(bmp.Width / 2f, bmp.Height / 2f));
+
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    var bmp2 = new Bitmap(bmp.Width, bmp.Height);
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    using (var g = Graphics.FromImage(bmp2))
+                    {
+                        g.Transform = matrix;
+                        g.DrawImage(bmp, 0, 0);
+                    }
+
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    bmp = bmp2;
+
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    MainPictureBoxUpdate();
+                    toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                    toolStripProgressBar.Value = 0;
+                }
+                else
+                {
+                    MessageBox.Show("Do not enter text.", "Rotate", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void horizontalFlipToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!(bmp == null))
+            {
+                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 3);
+                bmp.RotateFlip(RotateFlipType.RotateNoneFlipX);
+
+                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 3);
                 MainPictureBoxUpdate();
-                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 8);
+                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 3);
                 toolStripProgressBar.Value = 0;
             }
-            else
-            {
-                MessageBox.Show("Do not enter text.", "Crop", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        }
 
+        private void verticalFlipToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!(bmp == null))
+            {
+                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 3);
+                bmp.RotateFlip(RotateFlipType.RotateNoneFlipY);
+
+                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 3);
+                MainPictureBoxUpdate();
+                toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 3);
+                toolStripProgressBar.Value = 0;
+            }
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 4);
+            bmp = null;
+            path = "";
+            toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 4);
+
+            toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 4);
+            MainPictureBoxUpdate();
+            toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 4);
+            toolStripProgressBar.Value = 0;
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Developed by BirdSoft. Included in BirdAnalysis.", "About");
         }
     }
 }

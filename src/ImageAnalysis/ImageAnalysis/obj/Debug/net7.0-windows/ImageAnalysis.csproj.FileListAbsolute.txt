@@ -15,3 +15,4 @@ C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\n
 C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\ImageAnalysis.pdb
 C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\ImageAnalysis.genruntimeconfig.cache
 C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\ref\ImageAnalysis.dll
+C:\GitHub\BirdAnalysis-ImageAnalysis\src\ImageAnalysis\ImageAnalysis\obj\Debug\net7.0-windows\ImageAnalysis.Properties.Resources.resources
