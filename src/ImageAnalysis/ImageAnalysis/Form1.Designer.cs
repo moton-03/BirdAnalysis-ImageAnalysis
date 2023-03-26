@@ -43,10 +43,10 @@
             toolToolStripMenuItem = new ToolStripMenuItem();
             cropToolStripMenuItem = new ToolStripMenuItem();
             rotateToolStripMenuItem = new ToolStripMenuItem();
+            resizeToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
             statusStrip = new StatusStrip();
-            toolStripStatusLabel = new ToolStripStatusLabel();
             toolStripProgressBar = new ToolStripProgressBar();
             mainPictureBoxPanel = new Panel();
             mainPictureBox = new PictureBox();
@@ -96,38 +96,38 @@
             // openToolStripMenuItem
             // 
             openToolStripMenuItem.Name = "openToolStripMenuItem";
-            openToolStripMenuItem.Size = new Size(270, 34);
+            openToolStripMenuItem.Size = new Size(171, 34);
             openToolStripMenuItem.Text = "Open";
             openToolStripMenuItem.Click += openToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(267, 6);
+            toolStripSeparator2.Size = new Size(168, 6);
             // 
             // saveToolStripMenuItem
             // 
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new Size(270, 34);
+            saveToolStripMenuItem.Size = new Size(171, 34);
             saveToolStripMenuItem.Text = "Save";
             saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
             // saveAsToolStripMenuItem
             // 
             saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            saveAsToolStripMenuItem.Size = new Size(270, 34);
+            saveAsToolStripMenuItem.Size = new Size(171, 34);
             saveAsToolStripMenuItem.Text = "SaveAs";
             saveAsToolStripMenuItem.Click += saveAsToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(267, 6);
+            toolStripSeparator1.Size = new Size(168, 6);
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(270, 34);
+            exitToolStripMenuItem.Size = new Size(171, 34);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -141,12 +141,13 @@
             // revertToolStripMenuItem
             // 
             revertToolStripMenuItem.Name = "revertToolStripMenuItem";
-            revertToolStripMenuItem.Size = new Size(270, 34);
+            revertToolStripMenuItem.Size = new Size(164, 34);
             revertToolStripMenuItem.Text = "Revert";
+            revertToolStripMenuItem.Click += revertToolStripMenuItem_Click;
             // 
             // toolToolStripMenuItem
             // 
-            toolToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cropToolStripMenuItem, rotateToolStripMenuItem });
+            toolToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cropToolStripMenuItem, rotateToolStripMenuItem, resizeToolStripMenuItem });
             toolToolStripMenuItem.Name = "toolToolStripMenuItem";
             toolToolStripMenuItem.Size = new Size(61, 29);
             toolToolStripMenuItem.Text = "Tool";
@@ -164,6 +165,13 @@
             rotateToolStripMenuItem.Size = new Size(270, 34);
             rotateToolStripMenuItem.Text = "Rotate";
             // 
+            // resizeToolStripMenuItem
+            // 
+            resizeToolStripMenuItem.Name = "resizeToolStripMenuItem";
+            resizeToolStripMenuItem.Size = new Size(270, 34);
+            resizeToolStripMenuItem.Text = "Resize";
+            resizeToolStripMenuItem.Click += resizeToolStripMenuItem_Click;
+            // 
             // helpToolStripMenuItem
             // 
             helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutToolStripMenuItem });
@@ -180,18 +188,12 @@
             // statusStrip
             // 
             statusStrip.ImageScalingSize = new Size(24, 24);
-            statusStrip.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel, toolStripProgressBar });
+            statusStrip.Items.AddRange(new ToolStripItem[] { toolStripProgressBar });
             statusStrip.Location = new Point(0, 418);
             statusStrip.Name = "statusStrip";
             statusStrip.Size = new Size(800, 32);
             statusStrip.TabIndex = 1;
             statusStrip.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel
-            // 
-            toolStripStatusLabel.Name = "toolStripStatusLabel";
-            toolStripStatusLabel.Size = new Size(78, 25);
-            toolStripStatusLabel.Text = "Standby";
             // 
             // toolStripProgressBar
             // 
@@ -260,7 +262,6 @@
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem aboutToolStripMenuItem;
         private StatusStrip statusStrip;
-        private ToolStripStatusLabel toolStripStatusLabel;
         private ToolStripProgressBar toolStripProgressBar;
         private OpenFileDialog openFileDialog;
         private Panel mainPictureBoxPanel;
@@ -268,5 +269,6 @@
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem saveAsToolStripMenuItem;
         private SaveFileDialog saveFileDialog;
+        private ToolStripMenuItem resizeToolStripMenuItem;
     }
 }
