@@ -10,14 +10,43 @@ namespace ImageAnalysis
         Bitmap bmp = null;
         string path = "";
 
+        bool fileOpen = false;
+
         public Form1()
         {
             InitializeComponent();
+            MenuUpdate();
         }
 
         void MainPictureBoxUpdate()
         {
             mainPictureBox.Image = bmp;
+        }
+
+        void MenuUpdate()
+        {
+            openToolStripMenuItem.Visible = false;
+            saveToolStripMenuItem.Visible = false;
+            saveAsToolStripMenuItem.Visible = false;
+            closeToolStripMenuItem.Visible = false;
+            exitToolStripMenuItem.Visible = false;
+            revertToolStripMenuItem.Visible = false;
+            imageToolStripMenuItem.Visible = false;
+            aboutToolStripMenuItem.Visible = false;
+
+            openToolStripMenuItem.Visible = true;
+            exitToolStripMenuItem.Visible = true;
+            aboutToolStripMenuItem.Visible = true;
+
+            if (fileOpen)
+            {
+                openToolStripMenuItem.Visible = true;
+                saveToolStripMenuItem.Visible = true;
+                saveAsToolStripMenuItem.Visible = true;
+                closeToolStripMenuItem .Visible = true;
+                revertToolStripMenuItem .Visible = true;
+                imageToolStripMenuItem.Visible = true;
+            }
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -31,6 +60,8 @@ namespace ImageAnalysis
                 bmp = new Bitmap(path);
                 toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 4);
                 MainPictureBoxUpdate();
+                fileOpen = true;
+                MenuUpdate();
                 toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 4);
                 toolStripProgressBar.Value = 0;
             }
@@ -252,6 +283,8 @@ namespace ImageAnalysis
 
             toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 4);
             MainPictureBoxUpdate();
+            fileOpen = false;
+            MenuUpdate();
             toolStripProgressBar.Value = toolStripProgressBar.Value + (100 / 4);
             toolStripProgressBar.Value = 0;
         }
